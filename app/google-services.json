@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "787355146222",
+    "firebase_url": "https://bryon-nicoson-news.firebaseio.com",
+    "project_id": "bryon-nicoson-news",
+    "storage_bucket": "bryon-nicoson-news.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787355146222:android:016909bb5aded0b2",
+        "android_client_info": {
+          "package_name": "com.bryonnicoson.news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787355146222-rjmi7lt1cuk0mut50atrq83k574biaeu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bryonnicoson.news",
+            "certificate_hash": "045bd7d91da73daf8babc5c99c4501ab2709e95b"
+          }
+        },
+        {
+          "client_id": "787355146222-gqe1ag35v8vqgs6dkr3otcah6ttcm3cf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmg7viTBKcubAbwVzIl-NWgVPZLGQkwWg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787355146222-gqe1ag35v8vqgs6dkr3otcah6ttcm3cf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

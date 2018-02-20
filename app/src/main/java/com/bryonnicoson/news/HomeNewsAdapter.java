@@ -1,5 +1,6 @@
 package com.bryonnicoson.news;
 
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.bryonnicoson.news.model.Article;
 import com.bryonnicoson.news.utils.DateUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.List;
 
@@ -49,6 +51,13 @@ public class HomeNewsAdapter extends RecyclerView.Adapter<HomeNewsAdapter.HomeNe
 
             @Override
             public void onClick(View view) {
+
+                //log analytics
+                FirebaseAnalytics firebaseAnalytics = FirebaseAnalytics.getInstance(view.getContext());
+                Bundle bundle = new Bundle();
+                bundle.putString("index", String.valueOf(position));
+                firebaseAnalytics.logEvent("cardClicked", bundle);
+
                 NewsDetailsActivity.launch(view.getContext(), position);
             }
         });
