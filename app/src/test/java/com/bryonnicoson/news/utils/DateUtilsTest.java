@@ -1,12 +1,14 @@
 package com.bryonnicoson.news.utils;
 
 import org.junit.Test;
+import static junit.framework.Assert.*;
 
-import static junit.framework.Assert.assertEquals;
 
 /**
  * Created by bryon on 2/20/18.
  */
+
+
 
 public class DateUtilsTest {
     String correctInputDate1 = "2018-02-20T09:56:27Z";
@@ -23,4 +25,6 @@ public class DateUtilsTest {
         String outputDate = DateUtils.formatNewsApiDate(null);
         assertEquals(outputDate, null);
     }
+
+
 }

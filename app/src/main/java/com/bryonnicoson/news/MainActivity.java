@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.bryonnicoson.news.model.GetArticlesResponse;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView newsRecyclerView;
     private CoordinatorLayout coordinatorLayout;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +34,15 @@ public class MainActivity extends AppCompatActivity {
         newsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.activity_main);
+        progressBar = (ProgressBar) findViewById(R.id.activity_main_progressbar);
 
-        Call<GetArticlesResponse> call = NewsAPI.getApi().getArticles("reuters", "top");
+        Call<GetArticlesResponse> call = NewsAPI.getApi().getArticles("espn", "top");
         call.enqueue(new Callback<GetArticlesResponse>() {
 
             @Override
             public void onResponse(Call<GetArticlesResponse> call, Response<GetArticlesResponse> response) {
+
+                progressBar.setVisibility(View.GONE);
                 showNewsApiSnack();
                 GetArticlesResponse getArticlesResponse = response.body();
                 NewsStore.setArticles(getArticlesResponse.getArticles());
