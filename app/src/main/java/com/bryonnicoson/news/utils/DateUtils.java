@@ -12,9 +12,11 @@ import java.util.Date;
 
 public class DateUtils {
     public static String formatNewsApiDate(String inputDate){
+        if (inputDate == null)
+            return null;
         try {
             String inputDateFormat = "yyy-MM-dd'T'HH:mm:ss'Z'";
-            String outputDateFormat = "EEEE, d MMM yyyy KK:mm";
+            String outputDateFormat = "EEE, d MMM yyyy KK:mm";
 
             SimpleDateFormat inputFormat = new SimpleDateFormat(inputDateFormat);
             SimpleDateFormat outputFormat = new SimpleDateFormat(outputDateFormat);
